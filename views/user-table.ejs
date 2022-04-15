@@ -1,0 +1,33 @@
+<h2 class="text-center mt-4 heading text-success">
+    Data from the Database
+  </h2>
+
+  <div class="mb-5 mt-3 mx-5 table-data">
+    <table border="1">
+      <tr>
+        <th>S.No</th>
+        <th>Full Name</th>
+        <th>Email Address</th>
+        <th>Phone</th>
+        <th>Message</th>
+        <!-- <th>Edit</th> -->
+        <!-- <th>Action</th> -->
+      </tr>
+
+      <% if(userData.length!=0){ var i=1; userData.forEach(function(data){ %>
+      <tr>
+        <td><%=i; %></td>
+        <td><%=data.data.name %></td>
+        <td><%=data.data.email %></td>
+        <td><%=data.data.phone %></td>
+        <td><%=data.data.message %></td>
+        <!-- <td> <button class="btn btn-outline-danger" onclick="handleDelete('<%=data._id%>')">
+          Delete</button></td> -->
+      </tr>
+      <% i++; }) %> <% } else{ %>
+      <tr>
+        <td colspan="7">No Data Found</td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
